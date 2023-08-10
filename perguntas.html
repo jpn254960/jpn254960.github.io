@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>perguntas</title>
+    <link rel="shortcut icon" href="img/favicon-removebg-preview.png" type="image/x-icon">
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Dosis&display=swap'); 
+
+    body{
+        background-image: url('img/About.png');
+        color: white;
+        min-width: 320px;
+        max-width: 800px;
+        margin: auto;
+
+    }
+    button#b1{
+        background-color: red;
+        color: white;
+        font-family: 'Dosis', sans-serif;
+        border-radius: 20px;
+        border-color: red;
+        position: absolute;
+        top: 20pt;
+    }
+    input{
+        
+        border-color: white;
+        border-radius: 10px;
+        font-size: 20pt;
+    }
+    main{
+        height: 100%;
+        position: fixed;
+        justify-content: center;
+        justify-items: center;
+        font-family: 'Dosis', sans-serif;
+        font-size: 20px
+        
+    }
+</style>
+<body>
+    <main>
+    <source media="max-width: 414px" srcset=''>
+    <p id="titul1o1">qual é a resultado da multiplicação  <br>dos numero de estrelas que aparecem <br>vezes o quanto meses estamos juntos </p>
+    <input type="text" id="p1">
+    <p id="titulo2">qual é a sensação de morar perto de vc?</p>
+    <input type="text" id="p2">
+    <p id="titulo3" >me fale a palavra descriptografada <br>que está escrita em baixo <br>BoQW6LqS84oQiwQiacdJeBo1l8TCSWxqlYG-FxS9BVc</p>
+    <input type="text" id="p3">
+    <button id="b1" onclick="clicar()">confimar</button>
+</main>
+</body>
+<script>
+    
+    function clicar(){
+        var s=0
+        var p1=document.getElementById('p1')
+        var p2=document.getElementById('p2')
+        var p3=document.getElementById('p3')
+        p1= Number(p1.value)
+        p2= String(p2.value)
+        p3= String(p3.value)
+        p1===9?s+=1:s=s
+        p2=='felicidade'?s+=1:s=s
+        p3=='feliz 5 messes de namoro'?s+=1:s=s
+        if (s==3){
+            open("vide.html")
+        }
+        
+        
+    }
+</script>
+</html>
