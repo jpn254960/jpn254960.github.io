@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Site</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap');
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f4f4f4;
+            font-family: 'Nunito', sans-serif;
+            color: #000000;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #000000;
+            padding: 0.5em;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 1em;
+            margin: 0 1em;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #313131;
+        }
+        nav img{
+            width: 70px;
+            height: 70px;
+            object-fit: cover;
+        }
+        main {
+            padding: 2em;
+        }
+
+        section {
+            margin-bottom: 2em;
+        }
+        #m1,
+        #m3{      width: 100px;
+            height: 150px;
+            object-fit: cover;
+            padding-left: 5px;
+            shape-outside: 20px;
+            filter: blur(3px);
+        }
+
+        #services p{
+            margin-left:  5px;
+        }
+        #m2{
+            height: 200px;
+            width: 150px;
+            object-fit: cover;
+            transition: 'duration' 0.4em;;
+        }
+
+        footer {
+            background-color: #000000;
+            color: #fff;
+            padding: 1em;
+            text-align: center;
+            bottom: 0; 
+            width: 100%;
+        }
+        #home{
+            margin: auto;
+            text-align: center;
+            width: 20%;
+            height: 350px;
+            background-color: black;
+            color: white;
+            padding: 10px;
+        }
+        #home img{
+            width: 150px;
+            height: 150px;
+            margin: auto;
+            border-radius: 100%;
+            object-fit: cover;
+        }
+        
+
+        /* Estilo do menu de navegação responsivo */
+        @media only screen and (max-width: 600px) {
+            nav {
+                flex-direction: row;
+            }
+
+            nav a {
+                margin: 0.5em 0;
+            }
+
+            nav.show-menu a {
+                display: block;
+                width: 100%;
+                text-align: center;
+            }
+            #home{
+                width: 50%;
+                height: 300px;
+                font-size: 12px;
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">Sobre</a>
+        <img src="Black And White Modern Vintage Retro Brand Logo.png" alt="">
+        <a href="#services">Serviços</a>
+        <a href="#contact">Contato</a>
+    </nav>
+    <main>
+        
+        <div id="home">
+            <img src="imgs/363407537_18065496286416821_9162546483968389334_n.jpg" alt="d" >
+            <!-- <p> empresa especializada em manutenção <br> e pequenos concertos e ajustes <br> trabalhamos bastante em apartamentos </p> -->
+            <p>texto teste:</p>
+        </div>
+
+
+        <section id="about">
+            <h2>Sobre Nós</h2>
+            <p>Descubra mais sobre a nossa história e compromisso com a excelência.</p>
+        </section>
+
+        <section id="services">
+            <h2>Nossos Serviços</h2>
+            <img src="" alt="" id="m1"> <img src="380268466_18139758097306812_8982657805039670960_n.jpg" alt=""  id="m2" > <img src="" alt="" id="m3">
+
+            <p id="p1">nome:</p>
+            <p id="p2">resulmo</p>
+        </section>
+
+        <section id="contact">
+            <h2>Entre em Contato</h2>
+            <form action="#" method="post">
+                <label for="name">Nome:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Mensagem:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+
+                <button type="submit">Enviar Mensagem</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Meu Site. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Script para tornar o menu de navegação responsivo -->
+    <script src="r.js"></script>
+</body>
+</html>
