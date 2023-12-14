@@ -1,0 +1,39 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@1,300&display=swap');
+body{
+    background-color: rgb(38, 38, 54);
+    margin-top:50px;
+    color: wheat;
+    font-family: 'Source Code Pro', monospace;
+}
+section{
+    margin: auto;
+    border-radius: 5%;
+    width: 400px;
+    height: 500px;
+    background-color: rgb(78, 38, 94);
+    text-align: center;
+
+}
+img{
+    padding-top:20px;;
+    height: 200px;
+    width: 200px;
+    border-radius: 100%;
+    object-fit: cover;
+}
+
+.entradas{
+    background-color: rgb(38, 38, 54);
+    border-radius: 20px;
+    color: wheat;
+    border-color: transparent
+}
+#entrar{
+    background-color: rgb(44, 40, 88);
+    border-radius: 50px;
+    border-color: transparent;
+    width: 60px;
+    height: 30px;
+    color: wheat;
+}
