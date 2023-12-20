@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Preahvihear&display=swap');
+    body{
+        background-color: rgb(18, 18, 105);
+        font-family: 'Preahvihear', sans-serif;
+    }
+    p{
+    margin: auto;
+    text-align: center;
+    font-size: 45px;}
+    #t1{
+        color: gold;
+    }
+    #t2{
+        color: green;
+    }
+    #t3{
+        color: green;
+    }
+    #t4{
+        color:rgb(131, 80, 4);
+    }
+
+    #painel{
+        background-color: rgb(3, 3, 53);
+        margin: auto;
+        text-align: center;
+        width: 200px;
+        height: 300px;
+        border-radius: 20px;
+        margin-top: 100px;
+        visibility: collapse;
+    }
+    #t_presente{
+        padding-top:0px;
+        color: white;
+        margin: 0%;
+        padding-top:50px;
+    }
+    #presente{
+        margin: 0%;
+        font-size: 80px;
+    }
+</style>
+<body>
+    <section id="painel">
+        <h1 id="t_presente"> feliz natal <br>  meu amor</h1>
+        <h1 id="presente" onclick="clicar()">🎁</h1>
+    </section> 
+    <p id="t1"></p>
+    <p id="t2"></p>
+    <p id="t3"></p>
+    <p id="t4"></p>
+
+    
+</body>
+<script>
+    var s=0
+    function arvore(){
+        s+=1
+
+        var t1= document.getElementById('t1')
+        var t2= document.getElementById('t2')
+        var t3= document.getElementById('t3')
+        var t4= document.getElementById('t4')
+        var painel= document.getElementById('painel')
+    
+        if (s==1){
+            t4.innerText='j u l'  
+        }else if(s==2){
+            t3.innerText='j u l i a'
+        }else if(s==3){
+            t2.innerText='j u l'
+        }else if (s==4){
+            t1.innerText=' j'
+        }else if(s==7){
+            t1.innerText=''
+            t2.innerText=''
+            t3.innerText=''
+            t4.innerText=''
+            painel.style.visibility='visible'
+        }
+    }
+    function clicar(){
+        var presente = document.getElementById('presente')
+        console.log(presente)
+        if (presente.innerText=='🎁'){
+            presente.innerText='🎞️'
+            console.log('entrou')
+        }else{
+            open('video.html')
+        }
+    }
+
+    setInterval(arvore,1000)
+</script>
+</html>
