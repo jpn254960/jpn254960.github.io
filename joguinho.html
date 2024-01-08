@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="joguinho.css">
+    <title>Document</title>
+</head>
+<body>
+    <section id="tabuleiro">
+        <section id="painel">
+            <img src="Design sem nome (13).png" alt="p1" id="personagem_1" class="personagem" onclick="escolher(1)">
+            <img src="WhatsApp Image 2023-12-20 at 00.43.57 (1).jpeg" alt="p2" id="personagem_2" class="personagem" onclick="escolher(2)">
+            <img src="photobooth.png" alt="p3" id="personagem_3" class="personagem" onclick="escolher(3)">
+            <img src="simbolo-do-instagram.png" alt="p4" id="personagem_4" class="personagem" onclick="escolher(4)">
+        </section>
+        <img src="Design sem nome (13).png" alt="" id="imagem" onclick="trocar_logo()">
+        <input type="text" id="nome" value="nome" onclick="text()">
+        <input type="button" id="criar" value="+ criar" onclick="criar()">
+    </section>
+</body>
+<script src="joguinho.js"></script>
+</html>

@@ -1,0 +1,63 @@
+body{
+    background-color: rgb(16, 16, 122);
+    margin-top: 10%;
+
+}
+#tabuleiro{
+    background-color: rgb(236, 232, 232);
+    width: 300px;
+    height: 400px;
+    margin: auto;
+    text-align: center;
+    border-radius: 20px;}
+
+#nome{
+    margin-top: 20px;
+    width: 200px; 
+    height: 15px;
+}
+#imagem{
+    box-shadow: 0 0 10px ;
+    margin-top: 30px;
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    object-fit: cover;
+}
+#imagem:hover{
+    filter: contrast(20%);
+}
+#painel{
+    box-shadow: 0 0 10px ;
+    background-color: rgb(194, 200, 211);
+    width: 0px;
+    height: 0px;
+    margin: auto;
+    border-radius: 10px;
+    visibility: collapse;
+}
+#criar{
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 20px;
+    border-color: rgb(0, 195, 255);
+    border-radius: 20px;
+    width: 60px;
+}
+
+#personagem_2,#personagem_1{
+    margin-top: 20px;
+}
+#personagem_2,#personagem_4{
+    margin-left: 100px;
+}
+.personagem{
+    margin-top: 5px;
+    width: 70px;
+    height: 70px;
+    border-radius:100%;
+    object-fit: cover;
+}
+.personagem:hover{
+    filter: contrast(20%);
+}
