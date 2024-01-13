@@ -7,16 +7,38 @@
     <link rel="stylesheet" href="clovis.css">
 </head>
 <body>
-    <section id="dados_cima">
-        <p>🪙</p><p id="money">85</p> <p>🥩</p><p id="fome">100%</p> <p>💧</p><p id="sede">100%</p>
+    <section id="casa">
+        <section id="dados_cima">
+            <p>🪙</p><p id="money">100</p> <p>🥩</p><p id="fome">100</p> <p>%</p> <p>💧</p><p id="sede">100</p> <p>%</p>
+        </section>
+        <section id="personagem">
+            <img id="clovis" src="clovis_normal.png" alt="">
+        </section>
+        
+        <section id="lista_jogos">
+            <img id="img" src="clovis_normal.png" alt="" onclick="iniciar_jogo(0)"> 
+            <img id="img" src="clovis_normal.png" alt="" onclick="iniciar_jogo(1)"> 
+            <img id="img" src="clovis_normal.png" alt="" onclick="iniciar_jogo(2)"> 
+        </section>
+        </section> 
+        
+        <section id="dados_baixo">
+           <p id="comer" onclick="comer()">🍽️</p>  <p id="jogar" onclick="jogar()">🎮</p>   <p id="beber" onclick="beber()">🥤</p>
+        </section>
+    </section>
+
+    <section id="jogo_1" onclick="pular()">
+    
+    <img src="" alt="" id="ceta">
+    <section id="tabuleiro">
+        <div id="clovis_jogo_1"></div>
+        <div id="quadrado"></div>
+    </section>
+    <h1 id="derrota">vc perdeu</h1>
+    
     </section>
     
-    <section id="personagem">
-        <img id="clovis" src="clovis_normal.png" alt="">
-    </section>
-    <section id="dados_baixo">
-        <p id="comer">🍽️</p><p id="beber">🥤</p>
-    </section>
+  
 </body>
 <script src="clovis.js"></script>
 </html>

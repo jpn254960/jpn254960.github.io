@@ -3,8 +3,20 @@ body{
     background-color:rgb(189, 251, 110);
     margin: 0px;
     font-family: 'League Spartan', sans-serif;
-
 }
+
+
+
+#jogo_1{
+    visibility:collapse;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(104, 255, 167);
+}
+
 #dados_cima{
     height: 50px;
     width: auto;
@@ -30,10 +42,30 @@ body{
     object-fit: cover;
 
 }
+#img{
+    width: 100px; 
+    height: 100px; 
+    margin: auto;
+    object-fit: cover;}
+#img:hover{
+    filter:contrast(70%)
+}
+#lista_jogos{
+    visibility: collapse;
+    text-align: center;
+    z-index: 1;
+    width: 100vw;
+    height: 90px;
+    bottom: 90px;
+    position: fixed;
+    
+    background-color: rgba(228, 225, 225, 0.479);
+    
+}
 
 #dados_baixo{
     width: 100%;
-    height: 70px;
+    height: 100px;
     background-color:rgb(255, 255, 255);
     position: fixed;
     bottom: 0;
@@ -44,8 +76,52 @@ body{
     display: flex;
     font-size: 50px;
     align-items: center;
+} 
+#comer,#beber,#jogar{
+    margin: auto;
+}
+#tabuleiro{
+    margin: auto;
+    width: 100vw;
+    height: 200px;
+    background-color: white;
+    margin-top: 25vh;
+    box-shadow: 0px 0px 10px;
+}
+#clovis_jogo_1{
+    position: relative;
+    right: -20px;
+    top: 120px;
+    background-color: rgb(136, 172, 36);
+    width: 40px;
+    height: 80px;
+    border-radius: 10px;
+}
+.pulo{
+    animation: personagem 0.5s linear infinite;
+}
+#quadrado{
+    width: 40px;
+    height: 40px;
+    background-color: blue;
+    position: relative;
+    left:360px;
+    top: 80px;
+    border-radius: 10px;
+}
+@keyframes quadrado{
+    0%{left: 100vw;}
+    90%{left: 0px;}
+    100%{left:-40px;}
 }
 
-#comer,#beber{
-    margin: auto;
+@keyframes personagem{
+    0%{top: 120px;}
+    100%{top: 40px;}
+}
+#derrota{
+    visibility: collapse;
+    color: red;
+    font-size: 50px;
+    text-align: center;
 }
