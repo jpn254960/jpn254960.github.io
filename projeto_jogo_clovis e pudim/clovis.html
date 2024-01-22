@@ -17,7 +17,7 @@
         
         <section id="lista_jogos">
             <img id="img" src="clovis_normal.png" alt="" onclick="iniciar_jogo(0)"> 
-            <img id="img" src="clovis_normal.png" alt="" onclick="iniciar_jogo(1)"> 
+            <img id="img" src="logo_genius_clovis.png" alt="" onclick="iniciar_jogo(1)"> 
             <img id="img" src="clovis_normal.png" alt="" onclick="iniciar_jogo(2)"> 
         </section>
         </section> 
@@ -30,14 +30,24 @@
     <section id="jogo_1" onclick="pular()">
     
     <img src="" alt="" id="ceta">
-    <section id="tabuleiro">
+    <section id="tabuleiro_1">
+        <h1 id="pontos_1">0 </h1>
         <div id="clovis_jogo_1"></div>
         <div id="quadrado"></div>
+        <h1 id="derrota">vc perdeu</h1>
     </section>
-    <h1 id="derrota">vc perdeu</h1>
-    
     </section>
-    
+
+    <section id="jogo_2">
+        <section id="tabuleiro_2">
+            <h1 id="pontos_2">0</h1>
+            <p id="vermelho" onclick="clicar(4)"></p>
+            <p id="verde" onclick="clicar(3)"></p>
+            <p id="azul" onclick="clicar(2)"></p>
+            <p id="amarelo" onclick="clicar(1)">'</p>
+        </section>
+        <h1 id="derrota_2">vc perdeu</h1>
+    </section>
   
 </body>
 <script src="clovis.js"></script>

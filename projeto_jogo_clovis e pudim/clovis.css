@@ -6,9 +6,35 @@ body{
 }
 
 
+#jogo_2{
+    visibility: collapse;
+    text-align: center;
+    position: fixed;
+    z-index: 3;
+    top:0;
+    text-align: center;
+    margin: auto;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(47, 150, 168);
+}
+#vermelho,#azul,#verde,#amarelo{
+    width: 50px;
+    height: 50px;
+    margin: auto;
+    box-shadow: 0 0 10px;
+    border-radius: 100%;
+    border: 8px black double;
+    border-color: black;
+}
+#vermelho{background-color: rgba(200, 0, 0, 0.50);}
+#verde{background-color: rgb(0, 200, 0,0.50);}
+#azul{background-color: rgb(0, 0, 200,0.50);}
+#amarelo{background-color: rgb(200, 200,0,0.50);}
 
 #jogo_1{
-    visibility:collapse;
+    visibility: collapse;
+    text-align: right;
     position: fixed;
     z-index: 2;
     top: 0;
@@ -43,8 +69,10 @@ body{
 
 }
 #img{
-    width: 100px; 
-    height: 100px; 
+    position: relative;
+    top: 2px;
+    width: 70px; 
+    height: 70px; 
     margin: auto;
     object-fit: cover;}
 #img:hover{
@@ -80,7 +108,7 @@ body{
 #comer,#beber,#jogar{
     margin: auto;
 }
-#tabuleiro{
+#tabuleiro_1{
     margin: auto;
     width: 100vw;
     height: 200px;
@@ -88,10 +116,20 @@ body{
     margin-top: 25vh;
     box-shadow: 0px 0px 10px;
 }
+#tabuleiro_2{
+    margin: auto;
+    width: 100vw;
+    height: 200px;
+    background-color: white;
+    margin-top: 25vh;
+    box-shadow: 0px 0px 10px;
+    display: flex;
+    flex-direction: row-reverse;
+}
 #clovis_jogo_1{
     position: relative;
-    right: -20px;
-    top: 120px;
+    left: 20px;
+    top: 40px;
     background-color: rgb(136, 172, 36);
     width: 40px;
     height: 80px;
@@ -106,22 +144,40 @@ body{
     background-color: blue;
     position: relative;
     left:360px;
-    top: 80px;
+    top: 60px;
     border-radius: 10px;
 }
 @keyframes quadrado{
-    0%{left: 100vw;}
-    90%{left: 0px;}
-    100%{left:-40px;}
-}
+    0%{left: 100vh;}
+    90%{left: 20px;}
+    100%{left: -40px;}
+    100%{left: -40px;}
+    100%{left: -40px;}
 
+}
+#pontos_1,#pontos_2{
+    position: relative;
+    top: 2px;
+    margin: 0px;
+    margin-right: 20px;
+
+
+}
 @keyframes personagem{
-    0%{top: 120px;}
+    0%{top: 100px;}
+    80%{top: 40px;}
+    90%{top: 40px;}
     100%{top: 40px;}
 }
-#derrota{
+@keyframes parado{
+    100%{top:100px ;
+    }
+
+}
+#derrota,#derrota_2{
     visibility: collapse;
     color: red;
     font-size: 50px;
     text-align: center;
 }
+
