@@ -9,21 +9,21 @@
 <body>
     <section id="casa">
         <section id="dados_cima">
-            <p>🪙</p><p id="money">100</p> <p>🥩</p><p id="fome">100</p> <p>%</p> <p>💧</p><p id="sede">100</p> <p>%</p>
+            <img src="icon_moeda.png" alt="" id="icon_cima"> <p id="money">50</p> <img src="icons_bife.png" alt="" id="icon_cima"> <p id="fome">100</p> <p>%</p> <img src="icon_sede.png" alt="" id="icon_cima"><p id="sede">100</p> <p>%</p>
         </section>
         <section id="personagem">
             <img id="clovis" src="clovis_normal.png" alt="">
         </section>
         
         <section id="lista_jogos">
-            <img id="img" src="clovis_normal.png" alt="" onclick="iniciar_jogo(0)"> 
-            <img id="img" src="logo_genius_clovis.png" alt="" onclick="iniciar_jogo(1)"> 
-            <img id="img" src="clovis_normal.png" alt="" onclick="iniciar_jogo(2)"> 
+            <img id="img" src="logo_jogo_1.png" alt="" onclick="iniciar_jogo(0)"> 
+            <img id="img" src="logo_jogo_2.png" alt="" onclick="iniciar_jogo(1)"> 
+            <img id="img" src="logo_jogo_3.png" alt="" onclick="iniciar_jogo(2)"> 
         </section>
         </section> 
         
         <section id="dados_baixo">
-           <p id="comer" onclick="comer()">🍽️</p>  <p id="jogar" onclick="jogar()">🎮</p>   <p id="beber" onclick="beber()">🥤</p>
+           <img src="icon_comer.png" alt="" id="comer" onclick="comer()"> <img src="icon_controle.png" alt="" id="jogar" onclick="jogar()">   <img src="icone_sede_tomar.png" alt="" id="beber" onclick="beber()">
         </section>
     </section>
 
@@ -47,6 +47,19 @@
             <p id="amarelo" onclick="clicar(1)">'</p>
         </section>
         <h1 id="derrota_2">vc perdeu</h1>
+    </section>
+
+    <section id="jogo_3">
+        <h1 id="pontos_3">0</h1>
+        <h1 id="saida" onclick="sair()">⬅️</h1>
+        <section id="tabuleiro_3">
+            <img src="costa_carta.png" alt="" id='peça_1' class="peça" onclick="virar_carta(0)">
+            <img src="costa_carta.png" alt="" id='peça_2' class="peça" onclick="virar_carta(1)">
+            <img src="costa_carta.png" alt="" id='peça_3' class="peça" onclick="virar_carta(2)"> 
+            <img src="costa_carta.png" alt="" id='peça_4' class="peça" onclick="virar_carta(3)">
+            <img src="costa_carta.png" alt="" id='peça_5' class="peça" onclick="virar_carta(4)">
+            <img src="costa_carta.png" alt="" id='peça_6' class="peça" onclick="virar_carta(5)">
+        </section>
     </section>
   
 </body>

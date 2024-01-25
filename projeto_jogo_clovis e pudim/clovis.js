@@ -1,18 +1,45 @@
 var fome=document.getElementById('fome') // vai ser salvo no armazanamento
 var sede=document.getElementById('sede') //vai ser salvo no armazanamento
 var moeda=document.getElementById('money') //vai ser salvo no armazanamento
-var pontos=[document.getElementById('pontos_1'),document.getElementById('pontos_2')]
+var pontos=[document.getElementById('pontos_1'),document.getElementById('pontos_2'),document.getElementById('pontos_3')]
 var clovis=document.getElementById('clovis')
 var lista_jogos=document.getElementById('lista_jogos')
-var cenas=[document.getElementById('jogo_1'),document.getElementById('jogo_2')]
+var cenas=[document.getElementById('jogo_1'),document.getElementById('jogo_2'),document.getElementById('jogo_3')]
 var quadrado=document.getElementById('quadrado')
 var clovis_jogo_1=document.getElementById('clovis_jogo_1')
 var txt_perdeu=document.getElementById('derrota')
 var verificador=[0]
+var acertos=0
 var clicados=[]
 var numeros_escolhidos=[]
 var parada_jogo_2=0
-var valor_moeda= Number(moeda.innerText)
+var cartas=['peça1.png','peça1.png','peça2.png','peça2.png','peça3.png','peça3.png']
+var figuras=[document.getElementById('peça_1'),document.getElementById('peça_2'),document.getElementById('peça_3'),document.getElementById('peça_4'),document.getElementById('peça_5'),document.getElementById('peça_6')]
+var cartas_virada=[]
+
+// sistema banco de dados
+
+if (localStorage.getItem('moeda')==null){
+    localStorage.setItem('moeda',50)
+    localStorage.setItem('fome',100)
+    localStorage.setItem('sede',100)
+    localStorage.setItem('hora',[new Date().getDate(),new Date().getHours(),new Date().getMinutes()])
+}else {
+    var hora=localStorage.getItem('hora')
+    
+
+    fome.innerText=localStorage.getItem('fome')
+    sede.innerText=localStorage.getItem('sede')
+    moeda.innerText=localStorage.getItem('moeda')
+}
+
+function atualizameto(){
+     localStorage.setItem('hora',[new Date().getDate(),new Date().getHours(),new Date().getMinutes()])
+     localStorage.setItem('fome',fome.innerText)
+     localStorage.setItem('sede',sede.innerText)
+     localStorage.setItem('moeda',moeda.innerText)
+}
+// codigo cena 1
 
 function piscar(){
     clovis.src='clovis_piscando.gif'
@@ -62,9 +89,14 @@ function iniciar_jogo(n){
     }else if (n==1){
         sorteador_cor()
         parada_jogo_2=1
+    }else if(n==2){
+        embaralhador()
+        cartas_virada=[]
+
     }
 }
 
+// codigo jogo 1
 function pular(){
         clovis_jogo_1.style.animation='personagem 500ms infinite'
         setTimeout(function(){
@@ -73,6 +105,7 @@ function pular(){
         },500)
 
 }
+
 
 function analise(){
 
@@ -85,11 +118,11 @@ function analise(){
         setTimeout(function(){
             cenas[0].style.visibility='collapse'
             txt_perdeu.style.visibility='collapse'
-            moeda+=Number(pontos[0].innerText)
+            pontos[0].innerText=0
         },2000 )
-        moeda.innerText=valor_moeda+pontos[0].innerText*2
-        pontos[0].innerText=0
-    } 
+        var pn0=Number(pontos[0].innerText)*2
+        moeda.innerText=Number(moeda.innerText)+pn0
+    }
 }
 
 function pontuar(){
@@ -105,7 +138,7 @@ function pontuar(){
 }
 
 
-// fuction da cena 2
+// codigo jogo 2
 function clicar(n){
     var tp=[]
     tp.push(n)
@@ -113,7 +146,6 @@ function clicar(n){
     aceder(tp,250)
     tp=[]
 }
-
 
 function subir_nivel(){
     var s=0
@@ -135,13 +167,22 @@ function subir_nivel(){
         if (erro>0){
             document.getElementById('derrota_2').style.visibility='visible'
             setTimeout(function(){
+                pontos[1].innerText=0
                 cenas[1].style.visibility='collapse'
                 document.getElementById('derrota_2').style.visibility='collapse'
-                pontos[1].innerText=0
                 parada_jogo_2=0
+                erro=0
+                s=0
+                v=0
+                numeros_escolhidos=[]
+                clicados=[]
+                moeda.innerText=`${resultado}`
             },1000)
-            console.log(pontos[1].innerText*2)
-            moeda.innerText=valor_moeda+pontos[1].innerText*4
+            var pn1=Number(pontos[1].innerText)*4
+            var resultado=Number(moeda.innerText)+pn1
+            console.log(resultado)
+
+
         }
 
     }
@@ -188,17 +229,69 @@ function aceder(n,tempo){
         },tempo)
     }
 }
+
+
+// codigo jogo 3 teste de sorteamento de cartas
+function embaralhador(){
+    for (var c=0;c!=7;c++){
+        var cor_sorteada=sorteador(0,cartas.length-1)
+        cartas.push(cartas[cor_sorteada])
+        cartas.splice(cor_sorteada,1)
+    }
+    console.log(cartas)
+}
+
+
+function virar_carta(s){
+    
+    figuras[s].src=cartas[s]
+    cartas_virada.push(cartas[s])
+    cartas_virada.push(figuras[s])
+
+    if(cartas_virada[0]==cartas_virada[2]){
+        cartas_virada=[]
+        acertos++
+        if(acertos==figuras.length/2){
+            setTimeout(function(){
+                for (var c=0;c!=figuras.length;c++){
+                    figuras[c].src='costa_carta.png'
+                }
+                embaralhador()
+                acertos=0
+            },1000)
+            pontos[2].innerText++
+        }
+    }else if (cartas_virada.length==4){
+        setTimeout(function(){   
+            cartas_virada[1].src='costa_carta.png'
+            cartas_virada[3].src='costa_carta.png'
+            cartas_virada=[]
+        },500)
+    }
+}
+
+function sair(){
+    console.log(pontos[2].innerText)
+    moeda.innerText=Number(moeda.innerText)+Number(pontos[2].innerText)
+    cenas[2].style.visibility='collapse'
+    for (var c=0;c!=figuras.length;c++){
+        figuras[c].src='costa_carta.png'
+    } 
+    pontos[2].innerText=0
+}
+
+// sistema de sorteamento
 function sorteador(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-
 // intervalos do codigo todo sem eles o codigo não executa nada
+setInterval(atualizameto,10)
 setInterval(subir_nivel,10)
 setInterval(pontuar,10)
 setInterval(analise,1)
 setInterval(piscar,1000*10)
-setInterval(dimunir_sede,300000)
-setInterval(dimunir_fome,2*60000)
+setInterval(dimunir_sede,300000)//duração de 8h20m
+setInterval(dimunir_fome,2*60000)//duração de 6h20m

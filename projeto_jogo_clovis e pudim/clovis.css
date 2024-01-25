@@ -18,6 +18,18 @@ body{
     height: 100vh;
     background-color: rgb(47, 150, 168);
 }
+
+#jogo_3{
+    z-index: 4;
+    visibility: visible;
+    position: fixed;
+    top: 0;
+    margin: auto;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(40, 129, 161);
+}
+
 #vermelho,#azul,#verde,#amarelo{
     width: 50px;
     height: 50px;
@@ -48,12 +60,17 @@ body{
     width: auto;
     background-color: rgb(255, 255, 255);
     display: flex;
-    font-size: 30px;
+    font-size: 40px;
     align-items: center;
     border-bottom-right-radius: 20px;
     border-bottom-left-radius: 20px;
     padding: 20px;
     box-shadow: 0px 0px 10px;
+}
+#icon_cima{
+    width: 50px;
+    height: 50px;
+    margin: auto;
 }
 
 
@@ -74,6 +91,7 @@ body{
     width: 70px; 
     height: 70px; 
     margin: auto;
+    margin-right:20px;
     object-fit: cover;}
 #img:hover{
     filter:contrast(70%)
@@ -107,6 +125,8 @@ body{
 } 
 #comer,#beber,#jogar{
     margin: auto;
+    width: 60px;
+    height:60px;
 }
 #tabuleiro_1{
     margin: auto;
@@ -116,6 +136,7 @@ body{
     margin-top: 25vh;
     box-shadow: 0px 0px 10px;
 }
+
 #tabuleiro_2{
     margin: auto;
     width: 100vw;
@@ -126,10 +147,34 @@ body{
     display: flex;
     flex-direction: row-reverse;
 }
+
+#tabuleiro_3{
+    margin: auto;
+    width: 100vw;
+    margin-top:10vh;
+    height: 500px;
+    background-color: rgb(249, 240, 233);
+    text-align: center;
+    box-shadow: 0px 0px 10px; 
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.peça{
+    width: 100px;
+    height: 100px;
+    margin-left: 70px;
+    top: 50px;
+    box-shadow: 0px 0px 5px;
+    background-color: rgb(255, 0, 0);
+    position: relative;    
+}
+
 #clovis_jogo_1{
     position: relative;
     left: 20px;
-    top: 40px;
+    top: 100px;
     background-color: rgb(136, 172, 36);
     width: 40px;
     height: 80px;
@@ -160,9 +205,23 @@ body{
     top: 2px;
     margin: 0px;
     margin-right: 20px;
-
-
+    z-index: 0;
 }
+#pontos_3{
+    position: fixed;
+    top: 20px;
+    right: 10px;
+    font-size: 40px;;
+    margin:0px;
+}
+#saida{
+    position: fixed;
+    top: 20px;
+    left: 10px;
+    margin: 0px;
+}
+
+
 @keyframes personagem{
     0%{top: 100px;}
     80%{top: 40px;}
