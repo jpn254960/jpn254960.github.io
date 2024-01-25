@@ -21,7 +21,7 @@ body{
 
 #jogo_3{
     z-index: 4;
-    visibility: visible;
+    visibility: collapse;
     position: fixed;
     top: 0;
     margin: auto;
